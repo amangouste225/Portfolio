@@ -1,0 +1,169 @@
+// FONTS
+
+@font-face {
+  font-family: 'sanslight';
+  src: url('../css/fonts/opensaucesans-light-webfont.woff2') format('woff2'),
+    url('../css/fonts/opensaucesans-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansregular';
+  src: url('../css/opensaucesans-regular-webfont.woff2') format('woff2'),
+    url('../css/opensaucesans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansmedium';
+  src: url('../css/opensaucesans-medium-webfont.woff2') format('woff2'),
+    url('../css/opensaucesans-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansbold';
+  src: url('../css/opensaucesans-bold-webfont.woff2') format('woff2'),
+    url('../css/opensaucesans-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary-light: 'sanslight', sans-serif;
+$primary-regular: 'sansregular', sans-serif;
+$primary-medium: 'sansmedium', sans-serif;
+$primary-bold: 'sansbold', sans-serif;
+
+// COLORS
+
+$back: #0c0c0c;
+$light: rgba(85, 85, 85, 0.35);
+$white: #fff;
+$background-active: rgba(85, 85, 85, 0.35);
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: $primary-regular;
+  font-weight: 300;
+  background-color: $back;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+// HEADER
+
+.header {
+  width: 100%;
+  max-width: inherit;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar {
+  position: fixed;
+  max-width: inherit;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.5rem;
+  top: 1rem;
+  height: 4.5rem;
+  left: 2%;
+  right: 2%;
+  backdrop-filter: blur(50px);
+  background-color: $background-active;
+  padding: 0 1rem;
+  font-family: $primary-bold;
+  z-index: 1;
+
+  & .logo {
+    font-size: 1.7rem;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    color: $white;
+  }
+
+  & .logo:hover,
+  & .logo:active {
+    background-color: $background-active;
+    border-radius: 1rem;
+  }
+}
+
+.nav-menu__link {
+  display: inline-block;
+  &-anchor {
+    font-size: 1.7rem;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    color: $white;
+  }
+
+  &-anchor:link,
+  &-anchor:visited {
+    border-radius: 1rem;
+  }
+  &-anchor:hover,
+  &-anchor:active {
+    background-color: $background-active;
+  }
+}
+.hero {
+  position: relative;
+  max-width: inherit;
+  width: inherit;
+  margin: 0 auto;
+  display: block;
+  padding: 0 10rem;
+  color: $white;
+
+  &-gradient {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      max-width: 80%;
+    }
+  }
+
+  &__title {
+    font-size: 10.5rem;
+    text-align: center;
+    font-family: $primary-light;
+    line-height: 1;
+    color: $white;
+    opacity: 1;
+    text-shadow: none;
+    mix-blend-mode: difference;
+  }
+}
